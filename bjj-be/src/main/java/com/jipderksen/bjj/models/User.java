@@ -26,4 +26,11 @@ public class User {
         this.belt = belt;
     }
 
+    public boolean addTraining(Training training) {
+        return this.trainings.add(training);
+    }
+
+    public boolean addRolPartner(RolPartner rolPartner) {
+        return  this.rolPartners.add(rolPartner);
+    }
 }

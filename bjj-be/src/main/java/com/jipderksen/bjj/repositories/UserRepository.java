@@ -1,6 +1,8 @@
 package com.jipderksen.bjj.repositories;
 
 import com.jipderksen.bjj.models.Belt;
+import com.jipderksen.bjj.models.RolPartner;
+import com.jipderksen.bjj.models.Training;
 import com.jipderksen.bjj.models.User;
 import org.springframework.stereotype.Repository;
 
@@ -29,5 +31,25 @@ public class UserRepository {
                 .filter(user -> user.getUsername().toLowerCase().trim().equals(username.toLowerCase().trim()))
                 .findFirst()
                 .orElse(null);
+    }
+
+    public boolean addTrainingForUser(Training training, String username) {
+        User user = this.getUserByUsername(username);
+        if (user == null) return false;
+        return user.addTraining(training);
+    }
+
+    public boolean addRolPartnerForUser(RolPartner rolPartner, String username) {
+        User user = this.getUserByUsername(username);
+        if (user == null) return false;
+        return user.addRolPartner(rolPartner);
+    }
+
+    public boolean promoteUser(String username) {
+        User user = this.getUserByUsername(username);
+        if (user == null) return false;
+        if (user.getBelt() == Belt.BLACK) return false;
+        user.setBelt(Belt.values()[user.getBelt().ordinal() + 1]);
+        return true;
     }
 }
