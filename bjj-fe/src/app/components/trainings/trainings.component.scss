@@ -1,0 +1,25 @@
+/* Add any specific styles for your component here */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px; /* Adjust the margin as needed */
+}
+
+thead {
+  background-color: #f2f2f2; /* Adjust the background color as needed */
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #ddd; /* Adjust the border color as needed */
+  text-align: left;
+}
+
+#date, #duration, #rounds, #technique {
+  width: 15%;
+}
+
+#notes {
+  width: 40%; /* Adjust the width as needed */
+}

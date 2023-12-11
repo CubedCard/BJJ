@@ -35,6 +35,11 @@ public class UserController {
         return this.repository.addTrainingForUser(training, username);
     }
 
+    @GetMapping("/{username}/trainings")
+    public List<Training> getAllTrainingsForUser(@PathVariable String username) {
+        return this.repository.getAllTrainingsForUser(username);
+    }
+
     @PostMapping("/{username}/rolPartner")
     public boolean addRolPartner(@PathVariable String username, @RequestBody RolPartner rolPartner) {
         return this.repository.addRolPartnerForUser(rolPartner, username);

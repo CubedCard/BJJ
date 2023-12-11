@@ -1,0 +1,24 @@
+<app-training-form *ngIf="showForm" (trainingAdded)="onTrainingAdded($event)"></app-training-form>
+
+<table>
+  <thead>
+  <tr>
+    <th id="date">Date</th>
+    <th id="duration">Duration (minutes)</th>
+    <th id="rounds">Number of Rounds</th>
+    <th id="technique">Technique</th>
+    <th id="notes">Notes</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let training of trainings">
+    <td>{{ training.date | date:'short' }}</td>
+    <td>{{ training.duration }}</td>
+    <td>{{ training.numberOfRounds }}</td>
+    <td>{{ training.technique }}</td>
+    <td>{{ training.notes }}</td>
+  </tr>
+  </tbody>
+</table>
+
+<button (click)="toggleForm()">Add Training</button>

@@ -7,6 +7,7 @@ import com.jipderksen.bjj.models.User;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -20,6 +21,7 @@ public class UserRepository {
 
     public UserRepository() {
         this.users.add(new User("Jippert", Belt.WHITE));
+        this.users.get(0).addTraining(new Training(new Date(), 60, 4, "Double Sleeve Guard", ""));
     }
 
     public List<User> getAllUsers() {
@@ -51,5 +53,11 @@ public class UserRepository {
         if (user.getBelt() == Belt.BLACK) return false;
         user.setBelt(Belt.values()[user.getBelt().ordinal() + 1]);
         return true;
+    }
+
+    public List<Training> getAllTrainingsForUser(String username) {
+        User user = this.getUserByUsername(username);
+        if (user == null) return new ArrayList<>();
+        else return user.getTrainings();
     }
 }

@@ -1,0 +1,13 @@
+<h1 mat-dialog-title>Add Training</h1>
+<div mat-dialog-content>
+  <p>Fill in this form</p>
+  <mat-form-field (submit)="onSubmit()">
+    <!-- Your form fields go here -->
+    <label>Date:</label>
+    <input type="date" formControlName="date" required>
+
+    <!-- Add more form fields as needed -->
+
+    <button type="submit">Add Training</button>
+  </mat-form-field>
+</div>
