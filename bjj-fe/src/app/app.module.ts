@@ -10,12 +10,14 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatDialogModule} from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatInputModule} from '@angular/material/input';
+import { TrainingCardComponent } from './components/cards/training-card/training-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TrainingsComponent,
-    TrainingFormComponent
+    TrainingFormComponent,
+    TrainingCardComponent
   ],
   imports: [
     BrowserModule,

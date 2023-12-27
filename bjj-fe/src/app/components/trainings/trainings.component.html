@@ -1,24 +1,18 @@
-<app-training-form *ngIf="showForm" (trainingAdded)="onTrainingAdded($event)"></app-training-form>
-
-<table>
-  <thead>
-  <tr>
-    <th id="date">Date</th>
-    <th id="duration">Duration (minutes)</th>
-    <th id="rounds">Number of Rounds</th>
-    <th id="technique">Technique</th>
-    <th id="notes">Notes</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let training of trainings">
-    <td>{{ training.date | date:'short' }}</td>
-    <td>{{ training.duration }}</td>
-    <td>{{ training.numberOfRounds }}</td>
-    <td>{{ training.technique }}</td>
-    <td>{{ training.notes }}</td>
-  </tr>
-  </tbody>
-</table>
-
-<button (click)="toggleForm()">Add Training</button>
+<div class="container">
+  <div class="quick-action" (click)="viewLatestTraining()">
+    <h1 class="quick-action-text">LATEST TRAINING</h1>
+  </div>
+  <div class="quick-action" (click)="viewLatestTraining()">
+    <h1 class="quick-action-text">LOG NEW TRAINING</h1>
+  </div>
+  <div class="quick-action" (click)="viewLatestTraining()">
+    <h1 class="quick-action-text">ADD ROLLING PARTNER</h1>
+  </div>
+</div>
+<div class="container">
+  <div class="trainings">
+    <div *ngFor="let training of trainings">
+      <app-training-card [training]="training"></app-training-card>
+    </div>
+  </div>
+</div>

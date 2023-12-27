@@ -22,6 +22,24 @@ public class UserRepository {
     public UserRepository() {
         this.users.add(new User("Jippert", Belt.WHITE));
         this.users.get(0).addTraining(new Training(new Date(), 60, 4, "Double Sleeve Guard", ""));
+        this.users.get(0).addTraining(new Training(new Date(), 60, 4, "Double Sleeve Guard", ""));
+        this.users.get(0).addTraining(new Training(new Date(), 60, 4, "Double Sleeve Guard", ""));
+        this.users.get(0).addTraining(new Training(new Date(), 60, 4, "Double Sleeve Guard", ""));
+        this.users.get(0).addTraining(new Training(new Date(), 60, 4, "Double Sleeve Guard", ""));
+        this.users.get(0).addTraining(new Training(new Date(), 60, 4, "Double Sleeve Guard", ""));
+        this.users.get(0).addTraining(new Training(new Date(), 60, 4, "Double Sleeve Guard", ""));
+        this.users.get(0).addTraining(new Training(new Date(), 60, 4, "Double Sleeve Guard", ""));
+        this.users.get(0).addTraining(new Training(new Date(), 60, 4, "Double Sleeve Guard", ""));
+        this.users.get(0).addTraining(new Training(new Date(), 60, 4, "Double Sleeve Guard", ""));
+        this.users.get(0).addTraining(new Training(new Date(), 60, 4, "Double Sleeve Guard", ""));
+        this.users.get(0).addTraining(new Training(new Date(), 60, 4, "Double Sleeve Guard", ""));
+        this.users.get(0).addTraining(new Training(new Date(), 60, 4, "Double Sleeve Guard", ""));
+        this.users.get(0).addTraining(new Training(new Date(), 60, 4, "Double Sleeve Guard", ""));
+        this.users.get(0).addTraining(new Training(new Date(), 60, 4, "Double Sleeve Guard", ""));
+        this.users.get(0).addTraining(new Training(new Date(), 60, 4, "Double Sleeve Guard", ""));
+        this.users.get(0).addTraining(new Training(new Date(), 60, 4, "Double Sleeve Guard", ""));
+        this.users.get(0).addTraining(new Training(new Date(), 60, 4, "Double Sleeve Guard", ""));
+        this.users.get(0).addTraining(new Training(new Date(), 60, 4, "Double Sleeve Guard", ""));
     }
 
     public List<User> getAllUsers() {

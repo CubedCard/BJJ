@@ -1,25 +1,36 @@
-/* Add any specific styles for your component here */
+@import '../../../styles.scss';
 
-table {
+.container {
+  display: flex;
+  flex-direction: row;
+  margin: 50px auto;
+  padding: 0 25px;
+}
+
+.quick-action-text {
+  color: #FFF;
+  font-size: $text-size-large;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+
+  padding: 0px 20px;
+  width: 60%;
+}
+
+.quick-action {
   width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px; /* Adjust the margin as needed */
+  height: 250px;
+  margin: auto 25px;
+  border-radius: 8px;
+  background: #242424;
 }
 
-thead {
-  background-color: #f2f2f2; /* Adjust the background color as needed */
-}
-
-th, td {
-  padding: 10px;
-  border: 1px solid #ddd; /* Adjust the border color as needed */
-  text-align: left;
-}
-
-#date, #duration, #rounds, #technique {
-  width: 15%;
-}
-
-#notes {
-  width: 40%; /* Adjust the width as needed */
+.trainings {
+  width: 100%;
+  margin: auto 25px;
+  border-radius: 8px;
+  background-color: $bg-color-dark;
+  max-height: 700px;
+  overflow-y: scroll;
 }
