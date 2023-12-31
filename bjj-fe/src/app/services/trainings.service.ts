@@ -22,4 +22,17 @@ export class TrainingsService {
   private getAllTrainings(username: string): Observable<Training[]> {
     return this.http.get<Training[]>(`/api/users/${username}/trainings`)
   }
+
+  public editTraining(username: string, training: Training): Promise<Training> {
+    return new Promise(resolve => {
+      this.putTraining(username, training).subscribe(response => {
+        resolve(response);
+      });
+    });
+  }
+
+  private putTraining(username: string, training: Training): Observable<Training> {
+    return this.http.put<Training>(`/api/users/${username}/training`, training);
+  }
+
 }
