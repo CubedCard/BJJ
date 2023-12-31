@@ -1,4 +1,4 @@
-import { Input, Component, OnInit } from '@angular/core';
+import { Input, Output, EventEmitter, Component, OnInit } from '@angular/core';
 import { Training } from '../../../models/training';
 
 @Component({
@@ -8,6 +8,7 @@ import { Training } from '../../../models/training';
 })
 export class TrainingCardComponent implements OnInit {
   @Input() training: Training | undefined = undefined;
+  @Output() newItemEvent = new EventEmitter<object>();
 
   constructor() { }
 
@@ -15,11 +16,11 @@ export class TrainingCardComponent implements OnInit {
   }
 
   public onEdit(): void {
-    console.log('edit');
+    this.newItemEvent.emit({action: 'edit', training: this.training});
   }
 
   public onDelete(): void {
-    console.log('delete');
+    this.newItemEvent.emit({action: 'delete', training: this.training});
   }
 
 }

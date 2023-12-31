@@ -12,7 +12,7 @@
 <div class="container">
   <div class="trainings">
     <div *ngFor="let training of trainings">
-      <app-training-card [training]="training"></app-training-card>
+      <app-training-card (newItemEvent)="changeTraining($event)" [training]="training"></app-training-card>
     </div>
   </div>
 </div>
