@@ -1,0 +1,36 @@
+@import '../../../styles.scss';
+
+.container {
+  display: flex;
+  flex-direction: row;
+  margin: 50px auto;
+  padding: 0 25px;
+}
+
+.quick-action-text {
+  color: #FFF;
+  font-size: $text-size-large;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+
+  padding: 0px 20px;
+  width: 60%;
+}
+
+.quick-action {
+  width: 100%;
+  height: 250px;
+  margin: auto 25px;
+  border-radius: 8px;
+  background: #242424;
+}
+
+.trainings {
+  width: 100%;
+  margin: auto 25px;
+  border-radius: 8px;
+  background-color: $bg-color-dark;
+  max-height: 700px;
+  overflow-y: scroll;
+}

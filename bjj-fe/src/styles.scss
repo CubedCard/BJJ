@@ -1,1 +1,27 @@
-/* You can add global styles to this file, and also import other style files */
+$bg-color: #585858;
+$bg-color-dark: #242424;
+$text-active: #82BD36;
+$text-link: #FEFDC7;
+$text-normal: #FFFFFF;
+$text-size-large: 48px;
+
+$button-edit: #061E72;
+$button-delete: #8C0606;
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 24px;
+  color: $text-normal;
+  background-color: $bg-color;
+}
+
+button {
+  border-radius: 8px;
+  border: none;
+  padding: 8px;
+  font-size: 24px;
+  color: white;
+  text-transform: uppercase;
+}

@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="quick-action" (click)="viewLatestTraining()">
+    <h1 class="quick-action-text">LATEST TRAINING</h1>
+  </div>
+  <div class="quick-action" (click)="viewLatestTraining()">
+    <h1 class="quick-action-text">LOG NEW TRAINING</h1>
+  </div>
+  <div class="quick-action" (click)="viewLatestTraining()">
+    <h1 class="quick-action-text">ADD ROLLING PARTNER</h1>
+  </div>
+</div>
+<div class="container">
+  <div class="trainings">
+    <div *ngFor="let training of trainings">
+      <app-training-card (newItemEvent)="changeTraining($event)" [training]="training"></app-training-card>
+    </div>
+  </div>
+</div>
