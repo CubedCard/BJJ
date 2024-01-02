@@ -14,6 +14,9 @@ export class TrainingsComponent implements OnInit {
   constructor(private service: TrainingsService, private router: Router) {
     this.service.getAll("Jippert").then(data => {
       this.trainings = data;
+      this.trainings.sort((a, b) => {
+        return new Date(a.date).getTime() - new Date(b.date).getTime();
+      });
     });
   }
 
@@ -27,7 +30,9 @@ export class TrainingsComponent implements OnInit {
   }
 
   public deleteTraining(training: Training): void {
-    console.log("delete");
+    this.service.deleteTraining("Jippert", training).then(() => {
+      this.trainings = this.trainings.filter(t => t.date !== training.date);
+    });
   }
 
   public changeTraining(event: any): void {

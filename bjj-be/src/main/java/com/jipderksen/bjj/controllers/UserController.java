@@ -7,6 +7,7 @@ import com.jipderksen.bjj.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -48,5 +49,10 @@ public class UserController {
     @PutMapping("/{username}/promote")
     public boolean promoteUser(@PathVariable String username) {
         return this.repository.promoteUser(username);
+    }
+
+    @DeleteMapping("/{username}/{trainingDate}")
+    public boolean deleteTraining(@PathVariable String username, @PathVariable String trainingDate) {
+        return this.repository.deleteTrainingForUser(username, trainingDate);
     }
 }
