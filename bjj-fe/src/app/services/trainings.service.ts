@@ -35,4 +35,17 @@ export class TrainingsService {
     return this.http.put<Training>(`/api/users/${username}/training`, training);
   }
 
+  public deleteTraining(username: string, training: Training): Promise<boolean> {
+    return new Promise(resolve => {
+      this.deleteTrainingFromUser(username, training).subscribe(response => {
+        resolve(response);
+      });
+    });
+  }
+
+  private deleteTrainingFromUser(username: string, training: Training): Observable<boolean> {
+    return this.http.delete<boolean>(`/api/users/${username}/${training.date}`);
+  }
+
+
 }

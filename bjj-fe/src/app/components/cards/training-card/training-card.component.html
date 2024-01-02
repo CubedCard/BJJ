@@ -1,6 +1,6 @@
 <div class="card" *ngIf="this.training">
   <div class="card-content">
-    <p class="info date">{{ this.training.date | date:'short'}}</p>
+    <p class="info date">{{ this.training.date | date:'fullDate'}}</p>
     <p class="info duration">{{ this.training.duration }}</p>
     <p class="info numberOfRounds">{{ this.training.numberOfRounds }}</p>
     <p class="info technique">{{ this.training.technique }}</p>

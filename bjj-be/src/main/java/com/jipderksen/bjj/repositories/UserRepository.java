@@ -6,6 +6,8 @@ import com.jipderksen.bjj.models.Training;
 import com.jipderksen.bjj.models.User;
 import org.springframework.stereotype.Repository;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -21,25 +23,26 @@ public class UserRepository {
 
     public UserRepository() {
         this.users.add(new User("Jippert", Belt.WHITE));
-        this.users.get(0).addTraining(new Training(new Date(), 60, 4, "Double Sleeve Guard", ""));
-        this.users.get(0).addTraining(new Training(new Date(), 60, 4, "Double Sleeve Guard", ""));
-        this.users.get(0).addTraining(new Training(new Date(), 60, 4, "Double Sleeve Guard", ""));
-        this.users.get(0).addTraining(new Training(new Date(), 60, 4, "Double Sleeve Guard", ""));
-        this.users.get(0).addTraining(new Training(new Date(), 60, 4, "Double Sleeve Guard", ""));
-        this.users.get(0).addTraining(new Training(new Date(), 60, 4, "Double Sleeve Guard", ""));
-        this.users.get(0).addTraining(new Training(new Date(), 60, 4, "Double Sleeve Guard", ""));
-        this.users.get(0).addTraining(new Training(new Date(), 60, 4, "Double Sleeve Guard", ""));
-        this.users.get(0).addTraining(new Training(new Date(), 60, 4, "Double Sleeve Guard", ""));
-        this.users.get(0).addTraining(new Training(new Date(), 60, 4, "Double Sleeve Guard", ""));
-        this.users.get(0).addTraining(new Training(new Date(), 60, 4, "Double Sleeve Guard", ""));
-        this.users.get(0).addTraining(new Training(new Date(), 60, 4, "Double Sleeve Guard", ""));
-        this.users.get(0).addTraining(new Training(new Date(), 60, 4, "Double Sleeve Guard", ""));
-        this.users.get(0).addTraining(new Training(new Date(), 60, 4, "Double Sleeve Guard", ""));
-        this.users.get(0).addTraining(new Training(new Date(), 60, 4, "Double Sleeve Guard", ""));
-        this.users.get(0).addTraining(new Training(new Date(), 60, 4, "Double Sleeve Guard", ""));
-        this.users.get(0).addTraining(new Training(new Date(), 60, 4, "Double Sleeve Guard", ""));
-        this.users.get(0).addTraining(new Training(new Date(), 60, 4, "Double Sleeve Guard", ""));
-        this.users.get(0).addTraining(new Training(new Date(), 60, 4, "Double Sleeve Guard", ""));
+        this.users.get(0).addTraining(new Training(this.generateRandomDateTime(), 60, 4, "Double Sleeve Guard", ""));
+        this.users.get(0).addTraining(new Training(this.generateRandomDateTime(), 60, 4, "Double Sleeve Guard", ""));
+        this.users.get(0).addTraining(new Training(this.generateRandomDateTime(), 60, 4, "Double Sleeve Guard", ""));
+        this.users.get(0).addTraining(new Training(this.generateRandomDateTime(), 60, 4, "Double Sleeve Guard", ""));
+        this.users.get(0).addTraining(new Training(this.generateRandomDateTime(), 60, 4, "Double Sleeve Guard", ""));
+        this.users.get(0).addTraining(new Training(this.generateRandomDateTime(), 60, 4, "Double Sleeve Guard", ""));
+        this.users.get(0).addTraining(new Training(this.generateRandomDateTime(), 60, 4, "Double Sleeve Guard", ""));
+        this.users.get(0).addTraining(new Training(this.generateRandomDateTime(), 60, 4, "Double Sleeve Guard", ""));
+        this.users.get(0).addTraining(new Training(this.generateRandomDateTime(), 60, 4, "Double Sleeve Guard", ""));
+        this.users.get(0).addTraining(new Training(this.generateRandomDateTime(), 60, 4, "Double Sleeve Guard", ""));
+        this.users.get(0).addTraining(new Training(this.generateRandomDateTime(), 60, 4, "Double Sleeve Guard", ""));
+        this.users.get(0).addTraining(new Training(this.generateRandomDateTime(), 60, 4, "Double Sleeve Guard", ""));
+        this.users.get(0).addTraining(new Training(this.generateRandomDateTime(), 60, 4, "Double Sleeve Guard", ""));
+        this.users.get(0).addTraining(new Training(this.generateRandomDateTime(), 60, 4, "Double Sleeve Guard", ""));
+        this.users.get(0).addTraining(new Training(this.generateRandomDateTime(), 60, 4, "Double Sleeve Guard", ""));
+        this.users.get(0).addTraining(new Training(this.generateRandomDateTime(), 60, 4, "Double Sleeve Guard", ""));
+        this.users.get(0).addTraining(new Training(this.generateRandomDateTime(), 60, 4, "Double Sleeve Guard", ""));
+        this.users.get(0).addTraining(new Training(this.generateRandomDateTime(), 60, 4, "Double Sleeve Guard", ""));
+        this.users.get(0).addTraining(new Training(this.generateRandomDateTime(), 60, 4, "Double Sleeve Guard", ""));
+        this.users.get(0).addTraining(new Training(this.generateRandomDateTime(), 60, 4, "Double Sleeve Guard", ""));
     }
 
     public List<User> getAllUsers() {
@@ -77,5 +80,26 @@ public class UserRepository {
         User user = this.getUserByUsername(username);
         if (user == null) return new ArrayList<>();
         else return user.getTrainings();
+    }
+
+    public boolean deleteTrainingForUser(String username, String training) {
+        User user = this.getUserByUsername(username);
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
+        if (user == null) return false;
+        try {
+            Date trainingDate = dateFormat.parse(training);
+            return user.removeTraining(trainingDate);
+        } catch (ParseException e) {
+            return false;
+        }
+    }
+
+    private Date generateRandomDateTime() {
+        long offset = new Date(1672589040000L).getTime(); // January 1, 2000 in milliseconds
+        long end = new Date(1704211500000L).getTime();    // January 1, 2024 in milliseconds
+
+        long randomTime = offset + (long) (Math.random() * (end - offset + 1));
+
+        return new Date(randomTime);
     }
 }

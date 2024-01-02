@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -28,6 +29,13 @@ public class User {
 
     public boolean addTraining(Training training) {
         return this.trainings.add(training);
+    }
+    public boolean removeTraining(Date training) {
+        Training trainingToRemove = this.trainings.stream()
+                .filter(t -> t.getDate().equals(training))
+                .findAny()
+                .orElse(null);
+        return this.trainings.remove(trainingToRemove);
     }
 
     public boolean addRolPartner(RolPartner rolPartner) {
