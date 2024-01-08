@@ -20,7 +20,10 @@ export class TrainingCardComponent implements OnInit {
   }
 
   public onDelete(): void {
-    this.newItemEvent.emit({action: 'delete', training: this.training});
+    let date = new Date(this.training?.date as Date).toLocaleDateString('en-GB', {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'});
+    if (confirm(`Are you certain about deleting the training from ${date}? \n\nPlease note that this action cannot be undone`) == true) {
+      this.newItemEvent.emit({action: 'delete', training: this.training});
+    }
   }
 
 }
