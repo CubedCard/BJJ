@@ -1,0 +1,30 @@
+<!-- training-form.component.html -->
+<form [formGroup]="trainingForm" (ngSubmit)="onSubmit()">
+  <mat-form-field appearance="fill">
+    <mat-label>Date</mat-label>
+    <input matInput formControlName="date" type="date" />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Duration</mat-label>
+    <input matInput formControlName="duration" type="number" />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Number of Rounds</mat-label>
+    <input matInput formControlName="numberOfRounds" type="number" />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Technique</mat-label>
+    <input matInput formControlName="technique" />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Notes</mat-label>
+    <textarea matInput formControlName="notes"></textarea>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit" [disabled]="!trainingForm.valid">Submit</button>
+</form>
+
