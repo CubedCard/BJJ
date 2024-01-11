@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Inject, OnInit, Output} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {UntypedFormBuilder, UntypedFormGroup, Validators} from '@angular/forms';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import {Training} from '../../../models/training';
 
@@ -10,9 +10,9 @@ import {Training} from '../../../models/training';
 })
 export class TrainingFormComponent implements OnInit {
   @Output() trainingAdded = new EventEmitter<any>();
-  trainingForm: FormGroup;
+  trainingForm: UntypedFormGroup;
 
-  constructor(private fb: FormBuilder,
+  constructor(private fb: UntypedFormBuilder,
               public dialogRef: MatDialogRef<TrainingFormComponent>,
               @Inject(MAT_DIALOG_DATA) public training: Training) {
     this.trainingForm = this.fb.group({
