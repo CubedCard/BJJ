@@ -1,0 +1,24 @@
+<form [formGroup]="trainingForm" (ngSubmit)="onSubmit()" class="form-container">
+  <h1>LOG NEW TRAINING</h1>
+  <mat-form-field>
+    <input matInput placeholder="Date" formControlName="date" type="date"/>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Duration" formControlName="duration" type="number"/>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Number of Rounds" formControlName="numberOfRounds" type="number"/>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Technique" formControlName="technique"/>
+  </mat-form-field>
+
+  <mat-form-field>
+    <textarea matInput placeholder="Notes" formControlName="notes"></textarea>
+  </mat-form-field>
+
+  <button type="submit" [disabled]="!trainingForm.valid">Submit</button>
+</form>

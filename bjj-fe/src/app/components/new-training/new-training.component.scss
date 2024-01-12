@@ -1,0 +1,14 @@
+@use '../../../styles.scss';
+
+.form-container {
+  margin: 50px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 800px;
+}
+
+button {
+  width: 120px;
+  align-self: end;
+}

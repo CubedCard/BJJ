@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {TrainingsService} from '../../services/trainings.service';
 import {Training} from '../../models/training';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-trainings',
@@ -11,8 +11,10 @@ import {Router} from '@angular/router';
 export class TrainingsComponent implements OnInit {
   public trainings: Training[] = [];
 
-  constructor(private service: TrainingsService, private router: Router) {
-    this.service.getAll("Jippert").then(data => {
+  constructor(private service: TrainingsService,
+              private router: Router,
+              private activatedRoute: ActivatedRoute) {
+    this.service.getAll('Jippert').then(data => {
       this.trainings = data;
       this.trainings.sort((a, b) => {
         return new Date(a.date).getTime() - new Date(b.date).getTime();
@@ -20,17 +22,18 @@ export class TrainingsComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+  }
 
   public viewLatestTraining(): void {
   }
 
   public editTraining(training: Training): void {
-    console.log("edit");
+    console.log('edit');
   }
 
   public deleteTraining(training: Training): void {
-    this.service.deleteTraining("Jippert", training).then(() => {
+    this.service.deleteTraining('Jippert', training).then(() => {
       this.trainings = this.trainings.filter(t => t.date !== training.date);
     });
   }
@@ -43,4 +46,7 @@ export class TrainingsComponent implements OnInit {
     }
   }
 
+  logNewTraining(): void {
+    this.router.navigate(['new-training'], {relativeTo: this.activatedRoute});
+  }
 }
