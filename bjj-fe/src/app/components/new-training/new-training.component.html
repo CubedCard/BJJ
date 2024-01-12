@@ -1,30 +1,24 @@
-<!-- training-form.component.html -->
-<form [formGroup]="trainingForm" (ngSubmit)="onSubmit()">
-  <mat-form-field appearance="fill">
-    <mat-label>Date</mat-label>
-    <input matInput formControlName="date" type="date" />
+<form [formGroup]="trainingForm" (ngSubmit)="onSubmit()" class="form-container">
+  <h1>LOG NEW TRAINING</h1>
+  <mat-form-field>
+    <input matInput placeholder="Date" formControlName="date" type="date"/>
   </mat-form-field>
 
-  <mat-form-field appearance="fill">
-    <mat-label>Duration</mat-label>
-    <input matInput formControlName="duration" type="number" />
+  <mat-form-field>
+    <input matInput placeholder="Duration" formControlName="duration" type="number"/>
   </mat-form-field>
 
-  <mat-form-field appearance="fill">
-    <mat-label>Number of Rounds</mat-label>
-    <input matInput formControlName="numberOfRounds" type="number" />
+  <mat-form-field>
+    <input matInput placeholder="Number of Rounds" formControlName="numberOfRounds" type="number"/>
   </mat-form-field>
 
-  <mat-form-field appearance="fill">
-    <mat-label>Technique</mat-label>
-    <input matInput formControlName="technique" />
+  <mat-form-field>
+    <input matInput placeholder="Technique" formControlName="technique"/>
   </mat-form-field>
 
-  <mat-form-field appearance="fill">
-    <mat-label>Notes</mat-label>
-    <textarea matInput formControlName="notes"></textarea>
+  <mat-form-field>
+    <textarea matInput placeholder="Notes" formControlName="notes"></textarea>
   </mat-form-field>
 
-  <button mat-raised-button color="primary" type="submit" [disabled]="!trainingForm.valid">Submit</button>
+  <button type="submit" [disabled]="!trainingForm.valid">Submit</button>
 </form>
-

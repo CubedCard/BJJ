@@ -1,11 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import { Training } from '../../models/training';
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
 
 @Component({
   selector: 'app-new-training',
   standalone: true,
-  imports: [],
+  imports: [
+    MatInputModule,
+    ReactiveFormsModule,
+    MatButtonModule
+  ],
   templateUrl: './new-training.component.html',
   styleUrl: './new-training.component.scss'
 })

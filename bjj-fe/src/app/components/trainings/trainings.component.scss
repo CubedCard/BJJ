@@ -19,11 +19,16 @@
 }
 
 .quick-action {
+  cursor: pointer;
   width: 100%;
   height: 250px;
   margin: auto 25px;
   border-radius: 8px;
   background: #242424;
+}
+
+.quick-action:hover {
+  opacity: .85;
 }
 
 .trainings {
