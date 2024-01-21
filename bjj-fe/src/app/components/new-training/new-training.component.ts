@@ -3,6 +3,7 @@ import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/
 import { Training } from '../../models/training';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
+import {TrainingsService} from '../../services/trainings.service';
 
 @Component({
   selector: 'app-new-training',
@@ -18,7 +19,8 @@ import {MatButtonModule} from '@angular/material/button';
 export class NewTrainingComponent implements OnInit {
   trainingForm!: FormGroup;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder,
+             private service: TrainingsService) {}
 
   ngOnInit(): void {
     this.initForm();
@@ -46,6 +48,7 @@ export class NewTrainingComponent implements OnInit {
       );
 
       console.log(training);
+      this.service.addNewTraining(training).then(() => {console.log('Training added')});
     }
   }
 }

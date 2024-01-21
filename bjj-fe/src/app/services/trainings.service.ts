@@ -47,5 +47,16 @@ export class TrainingsService {
     return this.http.delete<boolean>(`/api/users/${username}/${training.date}`);
   }
 
+  public addNewTraining(training: Training): Promise<Training> {
+    return new Promise(resolve => {
+      this.addTraining('Jippert', training).subscribe(response => {
+        resolve(response);
+      });
+    });
+  }
+
+  private addTraining(username: string, training: Training): Observable<Training> {
+    return this.http.post<Training>(`/api/users/${username}/training`, training);
+  }
 
 }
