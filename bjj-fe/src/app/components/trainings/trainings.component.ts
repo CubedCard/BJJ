@@ -17,7 +17,7 @@ export class TrainingsComponent implements OnInit {
     this.service.getAll('Jippert').then(data => {
       this.trainings = data;
       this.trainings.sort((a, b) => {
-        return new Date(a.date).getTime() - new Date(b.date).getTime();
+        return new Date(b.date).getTime() - new Date(a.date).getTime();
       });
     });
   }
