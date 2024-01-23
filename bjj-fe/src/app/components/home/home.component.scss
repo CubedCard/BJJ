@@ -1,0 +1,40 @@
+@import '../../../styles.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: calc(100vh - 90px);
+}
+
+.box {
+  width: 550px;
+  height: 413px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  cursor: pointer;
+  opacity: .8;
+
+  background-image: url('/assets/grapple-tracker-high-resolution-logo.png');
+  background-size: cover;
+}
+
+.box:hover {
+  opacity: 1;
+}
+
+.box h1 {
+  color: #FEFDC7;
+  text-align: center;
+  text-shadow: 4px 4px 10px #242424;
+  font-size: 128px;
+  text-transform: uppercase;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+}
