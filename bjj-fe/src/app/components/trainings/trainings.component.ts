@@ -26,6 +26,7 @@ export class TrainingsComponent implements OnInit {
   }
 
   public viewLatestTraining(): void {
+    this.router.navigate(['latest-training'], {relativeTo: this.activatedRoute});
   }
 
   public editTraining(training: Training): void {
@@ -46,7 +47,7 @@ export class TrainingsComponent implements OnInit {
     }
   }
 
-  logNewTraining(): void {
+  public logNewTraining(): void {
     this.router.navigate(['new-training'], {relativeTo: this.activatedRoute});
   }
 }

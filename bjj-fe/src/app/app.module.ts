@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TrainingsComponent } from './components/trainings/trainings.component';
 import {HttpClientModule} from '@angular/common/http';
-import { TrainingFormComponent } from './components/trainings/training-form/training-form.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatDialogModule} from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -13,15 +12,16 @@ import {MatInputModule} from '@angular/material/input';
 import { TrainingCardComponent } from './components/cards/training-card/training-card.component';
 import { NavComponent } from './components/nav/nav.component';
 import { HomeComponent } from './components/home/home.component';
+import { LatestTrainingComponent } from './components/latest-training/latest-training.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TrainingsComponent,
-    TrainingFormComponent,
     TrainingCardComponent,
     NavComponent,
     HomeComponent,
+    LatestTrainingComponent,
   ],
   imports: [
     BrowserModule,

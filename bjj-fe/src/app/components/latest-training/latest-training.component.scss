@@ -1,0 +1,61 @@
+@import '../../../styles';
+
+h1 {
+  text-transform: uppercase;
+}
+
+.container {
+  margin: 50px 0 0 50px;
+  max-width: 70%;
+}
+
+.header p, .header h1 {
+  margin: 0;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  gap: 150px;
+}
+
+.rounds-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.rounds-table th,
+.rounds-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.rounds-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  color: #000;
+}
+
+.actions {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: end;
+}
+
+.info {
+  margin: auto 12px;
+}
+
+.edit {
+  background-color: $button-edit;
+  color: white;
+}
+
+.delete {
+  background-color: $button-delete;
+  color: white;
+}

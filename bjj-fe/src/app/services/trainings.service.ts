@@ -59,4 +59,15 @@ export class TrainingsService {
     return this.http.post<Training>(`/api/users/${username}/training`, training);
   }
 
+  public getLatestTraining(): Promise<Training> {
+    return new Promise(resolve => {
+      this.getAll('Jippert').then(data => {
+        data.sort((a, b) => {
+          return new Date(b.date).getTime() - new Date(a.date).getTime();
+        });
+        resolve(data[0]);
+      });
+    });
+  }
+
 }
