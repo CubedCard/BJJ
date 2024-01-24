@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="header">
+    <h1>{{ this.training.technique }}</h1>
+    <p>{{ this.training.date | date:'fullDate'}}</p>
+  </div>
+  <div class="content">
+    <div>
+      <h1>Duration: {{ this.training.duration }} min</h1>
+      <h1>Rounds</h1>
+      <table class="rounds-table">
+      <thead>
+        <tr>
+          <th>NR.</th>
+          <th>Duration</th>
+          <th>Rolling Partner</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let round of rounds; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>5 min</td>
+          <td>Siem</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    <div>
+      <h1>Notes</h1>
+      <p>{{ this.training.notes }}</p>
+    </div>
+  </div>
+  <div class="actions">
+    <button class="info edit" (click)="onEdit()">Edit</button>
+    <button class="info delete" (click)="onDelete()">Delete</button>
+  </div>
+</div>
