@@ -13,6 +13,8 @@ import { TrainingCardComponent } from './components/cards/training-card/training
 import { NavComponent } from './components/nav/nav.component';
 import { HomeComponent } from './components/home/home.component';
 import { LatestTrainingComponent } from './components/latest-training/latest-training.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { SettingsComponent } from './components/settings/settings.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { LatestTrainingComponent } from './components/latest-training/latest-tra
     NavComponent,
     HomeComponent,
     LatestTrainingComponent,
+    ProfileComponent,
+    SettingsComponent,
   ],
   imports: [
     BrowserModule,
