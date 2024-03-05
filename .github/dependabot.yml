@@ -1,7 +1,7 @@
 version: 2
 updates:
   - package-ecosystem: "npm"
-    directory: "/"
+    directory: "/bjj-fe"
     schedule:
       interval: "daily"
     groups:
@@ -11,3 +11,7 @@ updates:
         update-types:
         - "minor"
         - "patch"
+  - package-ecosystem: "maven"
+    directory: "/bjj-be"
+    schedule:
+      interval: "daily"
